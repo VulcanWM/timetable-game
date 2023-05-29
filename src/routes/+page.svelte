@@ -109,12 +109,15 @@
 #keypad {
 	display: flex;
 	flex-wrap: wrap; 
+ 	align-items: center;
+	justify-content: center;
 }
 
 #keypad button {
-    flex-basis: 33.33333%;
+    flex-basis: 30%;
 	padding-top: 20px;
 	padding-bottom: 20px;
+	margin: 5px;
 }
 </style>
 
