@@ -113,7 +113,8 @@
 
 #keypad button {
     flex-basis: 33.33333%;
-	padding: 20px;
+	padding-top: 20px;
+	padding-bottom: 20px;
 }
 </style>
 
