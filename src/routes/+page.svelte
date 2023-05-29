@@ -114,7 +114,8 @@
 }
 
 #keypad button {
-    flex-basis: 30%;
+	flex-grow: 1;
+	width: 30%;
 	padding-top: 20px;
 	padding-bottom: 20px;
 	margin: 5px;
