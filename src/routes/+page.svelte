@@ -10,13 +10,13 @@
 	function toggle(){
 		if (open == true){
 			open = false;
-			seconds = 60;
+		} else {
 			ended = false;
-			guess = "";
+			open = true;
 			correct = 0;
 			incorrect = 0;
-		} else {
-			open = true;
+			guess = "";
+			seconds = 60;
 		}
 	}
 	function handleTick(){
@@ -42,14 +42,43 @@
 	}
 </script>
 
-<div>
+<style>
+#main {
+	text-align: center;
+}
+
+.time {
+	border-radius: 50%;
+	padding: 7.5px;
+	color: white;
+	background-color: blue;
+}
+
+.correct {
+	padding: 7.5px;
+	background-color: green;
+	color: white;
+}
+
+.incorrect {
+	padding: 7.5px;
+	background-color: red;
+	color: white;
+}
+
+.question {
+	display: inline;
+}
+</style>
+
+<div id="main">
 	<button on:click={toggle}>{open ? 'End Game' : 'Start'}</button>
 	{#if open}
-		<p>Correct: {correct}</p>
-		<p>Incorrect: {incorrect}</p>
-		<p>{seconds}</p>
+		<br/><br/><span class="time">{seconds}</span>
 		<Timer callback={handleTick} />
-		<p>What is {num1} x {num2}?</p>
+		<p class="question">What is {num1} x {num2}?</p>
+		<span class="correct">{correct}</span>
+		<span class="incorrect">{incorrect}</span>
 		<form on:submit|preventDefault={handleSubmit}>
 			<input bind:value={guess}/>
 		</form>
