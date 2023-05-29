@@ -45,6 +45,7 @@
 <style>
 #main {
 	text-align: center;
+	line-height: 1.8;
 }
 
 .time {
@@ -69,6 +70,16 @@
 .question {
 	display: inline;
 }
+
+#keypad {
+	display: flex;
+	flex-wrap: wrap; 
+}
+
+#keypad button {
+    flex-basis: 33.33333%;
+	padding: 20px;
+}
 </style>
 
 <div id="main">
@@ -82,9 +93,23 @@
 		<form on:submit|preventDefault={handleSubmit}>
 			<input bind:value={guess}/>
 		</form>
+		<div id="keypad">
+			<button on:click={() => guess += "1"}>1</button>
+			<button on:click={() => guess += "2"}>2</button>
+			<button on:click={() => guess += "3"}>3</button>
+			<button on:click={() => guess += "4"}>4</button>
+			<button on:click={() => guess += "5"}>5</button>
+			<button on:click={() => guess += "6"}>6</button>
+			<button on:click={() => guess += "7"}>7</button>
+			<button on:click={() => guess += "8"}>8</button>
+			<button on:click={() => guess += "9"}>9</button>
+			<button on:click={() => guess = guess.slice(0, -1)}>Delete</button>
+			<button on:click={() => guess += "0"}>0</button>
+			<button on:click={handleSubmit}>Enter</button>
+		</div>
 	{/if}
 	{#if ended}
-		<p>The game has ended! You got {correct} questions correct and {incorrect} questions incorrect!</p>
+		<p>The game has ended! You got <span class="correct">{correct}</span> questions correct and <span class="incorrect">{incorrect}</span> questions incorrect!</p>
 		<p>You got {percentage}% of questions correct!</p>
 	{/if}
 </div>
