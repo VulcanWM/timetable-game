@@ -42,7 +42,6 @@
 	}
 
 	function onKeyDown(e) {
-		console.log(e.keyCode)
 		if (e.keyCode > 47 && e.keyCode < 58){
 			let inputNum = e.keyCode - 48
 			guess += inputNum.toString()
@@ -133,6 +132,16 @@
 	padding-bottom: 20px;
 	margin: 5px;
 }
+
+.guess {
+	padding: 10px;
+	width: 90%;
+	margin: 10px;
+	color: black;
+	background-color: white;
+	border: 1px solid black;
+	text-align: center;
+}
 </style>
 
 <div id="main">
@@ -142,10 +151,8 @@
 		<Timer callback={handleTick} />
 		<p class="question">What is {num1} x {num2}?</p>
 		<span class="correct">{correct}</span>
-		<span class="incorrect">{incorrect}</span>
-		<form on:submit|preventDefault={handleSubmit}>
-			<input bind:value={guess}/>
-		</form>
+		<span class="incorrect">{incorrect}</span><br/>
+		<input class="guess" bind:value={guess} disabled/>
 		<div id="keypad">
 			<button on:click={() => guess += "1"}>1</button>
 			<button on:click={() => guess += "2"}>2</button>
