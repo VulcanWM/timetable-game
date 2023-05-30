@@ -40,6 +40,18 @@
 		num1 = Math.floor(Math.random() * 20) + 1;
 		num2 = Math.floor(Math.random() * 20) + 1;
 	}
+
+	function onKeyDown(e) {
+		console.log(e.keyCode)
+		if (e.keyCode > 47 && e.keyCode < 58){
+			let inputNum = e.keyCode - 48
+			guess += inputNum.toString()
+		} else if (e.keyCode == 8){
+			guess = guess.slice(0, -1)
+		} else if (e.keyCode == 13){
+			handleSubmit()
+		}
+	}
 </script>
 
 <style>
@@ -155,3 +167,4 @@
 	<p>Your speed was {speed} seconds per question.</p>
 	{/if}
 </div>
+<svelte:window on:keydown|preventDefault={onKeyDown} />
