@@ -29,6 +29,7 @@
 	let num2 = Math.floor(Math.random() * 20) + 1;
 	$: answer = num1 * num2
 	$: percentage = Math.floor((correct/(correct+incorrect))*100)
+	$: speed = Math.floor(60/correct*100)/100
 	function handleSubmit() {
 		if (parseInt(guess) == answer){
 			correct += 1
@@ -151,5 +152,6 @@
 	{#if ended}
 		<p>The game has ended! You got <span class="correct">{correct}</span> questions correct and <span class="incorrect">{incorrect}</span> questions incorrect!</p>
 		<p>You got {percentage}% of questions correct!</p>
+	<p>Your speed was {score} seconds per question</p>
 	{/if}
 </div>
