@@ -41,6 +41,9 @@
 		num2 = Math.floor(Math.random() * 20) + 1;
 	}
 
+	/**
+     * @param {{ keyCode: number; }} e
+     */
 	function onKeyDown(e) {
 		if (e.keyCode > 47 && e.keyCode < 58){
 			let inputNum = e.keyCode - 48
@@ -54,46 +57,6 @@
 </script>
 
 <style>
-
-#main {
-  background-color: #16a34a;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  border: 2px solid black;
-  border-radius: 12px;
-  padding: 20px;
-  width: 50vw;
-  text-align: center;
-  overflow-wrap: break-word;
-  line-height: 1.8;
-}
-
-@media only screen and (max-width: 600px) {
-  #main {
-    width: 60vw;
-  }
-  p {
-    font-size: 12px;
-  }
-  button {
-    font-size: 12px
-  }
-}
-
-@media only screen and (max-height: 400px) {
-  #main {
-    width: 95%;
-  }
-}
-
-@media only screen and (max-width: 400px) {
-  #main {
-    width: 80vw;
-  }
-}
 
 .time {
 	border-radius: 50%;
@@ -144,7 +107,7 @@
 }
 </style>
 
-<div id="main">
+<div>
 	<button on:click={toggle}>{open ? 'End Game' : 'Start'}</button>
 	{#if open}
 		<br/><br/><span class="time">{seconds}</span>

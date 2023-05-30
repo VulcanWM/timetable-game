@@ -3,5 +3,7 @@
 </script>
 
 <body>
-    <slot />
+    <div id="main">
+        <slot />
+    </div>
 </body>
