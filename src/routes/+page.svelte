@@ -152,6 +152,6 @@
 	{#if ended}
 		<p>The game has ended! You got <span class="correct">{correct}</span> questions correct and <span class="incorrect">{incorrect}</span> questions incorrect!</p>
 		<p>You got {percentage}% of questions correct!</p>
-	<p>Your speed was {score} seconds per question</p>
+	<p>Your speed was {speed} seconds per question.</p>
 	{/if}
 </div>
