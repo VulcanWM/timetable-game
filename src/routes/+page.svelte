@@ -6,7 +6,9 @@
 	let correct = 0;
 	let incorrect = 0;
 	let guess = ""
-	function toggle(){
+	const all_timetables = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+	let timetables = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+	function toggleStart(){
 		if (open == true){
 			open = false;
 		} else {
@@ -21,12 +23,12 @@
 	function handleTick(){
 		seconds -= 1
 		if (seconds == 0){
-			toggle();
+			toggleStart();
 			ended = true;
 		}
 	}
-	let num1 = Math.floor(Math.random() * 20) + 1;
-	let num2 = Math.floor(Math.random() * 20) + 1;
+	$: num1 = timetables[Math.floor(Math.random() * timetables.length)];
+	$: num2 = Math.floor(Math.random() * 12) + 1;
 	$: answer = num1 * num2
 	$: percentage = Math.floor((correct/(correct+incorrect))*100)
 	$: speed = Math.floor(60/correct*100)/100
@@ -37,8 +39,8 @@
 			incorrect += 1
 		}
 		guess = ""
-		num1 = Math.floor(Math.random() * 20) + 1;
-		num2 = Math.floor(Math.random() * 20) + 1;
+		num1 = timetables[Math.floor(Math.random() * timetables.length)];
+		num2 = Math.floor(Math.random() * 12) + 1;
 	}
 
 	/**
@@ -54,6 +56,20 @@
 			handleSubmit()
 		}
 	}
+	/**
+     * @param {number} timetable
+     */
+	function toggleTimetable(timetable){
+		if (timetables.includes(timetable)){
+			const index = timetables.indexOf(timetable);
+			timetables.splice(index, 1);
+			timetables = timetables
+		} else {
+			timetables.push(timetable)
+			timetables = timetables
+		}
+	}
+
 </script>
 
 <style>
@@ -105,10 +121,25 @@
 	border: 1px solid black;
 	text-align: center;
 }
+
+.timetable {
+	color: white;
+	margin: 5px;
+}
+
+.inactive {
+	color: red;
+	text-decoration: line-through;
+}
 </style>
 
 <div>
-	<button on:click={toggle}>{open ? 'End Game' : 'Start'}</button>
+	{#if ended}
+		<p>The game has ended! You got <span class="correct">{correct}</span> questions correct and <span class="incorrect">{incorrect}</span> questions incorrect!</p>
+		<p>You got {percentage}% of questions correct!</p>
+	<p>Your speed was {speed} seconds per question.</p>
+	{/if}
+	<button on:click={toggleStart}>{open ? 'End' : 'Start'} Game</button>
 	{#if open}
 		<br/><br/><span class="time">{seconds}</span>
 		<Timer callback={handleTick} />
@@ -130,11 +161,11 @@
 			<button on:click={() => guess += "0"}>0</button>
 			<button on:click={handleSubmit}>Enter</button>
 		</div>
-	{/if}
-	{#if ended}
-		<p>The game has ended! You got <span class="correct">{correct}</span> questions correct and <span class="incorrect">{incorrect}</span> questions incorrect!</p>
-		<p>You got {percentage}% of questions correct!</p>
-	<p>Your speed was {speed} seconds per question.</p>
+	{:else}
+		<h3>Timetables that will appear</h3>
+		{#each all_timetables as timetable}
+			<button on:click={() => toggleTimetable(timetable)} class="timetable {timetables.includes(timetable)?"":"inactive"}">{timetable}</button>
+		{/each}
 	{/if}
 </div>
 <svelte:window on:keydown|preventDefault={onKeyDown} />
