@@ -132,7 +132,9 @@
 	text-decoration: line-through;
 }
 </style>
-
+<svelte:head>
+	<title>Timetable Game</title>
+</svelte:head>
 <div>
 	{#if ended}
 		<p>The game has ended! You got <span class="correct">{correct}</span> questions correct and <span class="incorrect">{incorrect}</span> questions incorrect!</p>
