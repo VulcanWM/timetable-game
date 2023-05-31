@@ -100,10 +100,22 @@ button {
     width: 100%
 }
 
+a {
+  text-decoration: none;
+  background-color: #a02bce;
+  color: white;
+  border-radius: 10px;
+
+}
+
+a:hover {
+  text-decoration:underline;
+}
+
 #navbar > a {
   text-decoration: none;
   color: #a02bce;
-
+  background-color: #5cb9ef;
 }
 
 #navbar > a:hover {
