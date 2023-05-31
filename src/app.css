@@ -97,8 +97,19 @@ button {
     bottom: 20px;
     transform: translate(-50%, -50%);
     margin: 0 auto;
+    width: 100%
+}
+
+#navbar > a {
+  text-decoration: none;
+  color: #a02bce;
+
+}
+
+#navbar > a:hover {
+  text-decoration:underline;
 }
 
 #main::-webkit-scrollbar {
-  width: 0 !important
+  display: none;
   }

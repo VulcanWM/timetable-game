@@ -127,6 +127,7 @@
 	text-align: center;
 	font-weight: bold;
 	opacity: 1;
+	background-color: white;
 }
 
 .timetable {
