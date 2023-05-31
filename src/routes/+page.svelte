@@ -8,6 +8,8 @@
 	let guess = ""
 	const all_timetables = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
 	let timetables = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+	let xValues = [0]
+	let yValues = [0]
 	function toggleStart(){
 		if (open == true){
 			open = false;
@@ -21,6 +23,10 @@
 		}
 	}
 	function handleTick(){
+		xValues.push(60 - seconds)
+		xValues = xValues
+		yValues.push(correct)
+		yValues = yValues
 		seconds -= 1
 		if (seconds == 0){
 			toggleStart();
@@ -139,7 +145,7 @@
 	{#if ended}
 		<p>The game has ended! You got <span class="correct">{correct}</span> questions correct and <span class="incorrect">{incorrect}</span> questions incorrect!</p>
 		<p>You got {percentage}% of questions correct!</p>
-	<p>Your speed was {speed} seconds per question.</p>
+		<p>Your speed was {speed} seconds per question.</p>
 	{/if}
 	<button on:click={toggleStart}>{open ? 'End' : 'Start'} Game</button>
 	{#if open}
