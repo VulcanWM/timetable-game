@@ -123,9 +123,10 @@
 	width: 90%;
 	margin: 10px;
 	color: black;
-	background-color: white;
 	border: 1px solid black;
 	text-align: center;
+	font-weight: bold;
+	opacity: 1;
 }
 
 .timetable {

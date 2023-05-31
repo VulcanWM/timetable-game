@@ -1,12 +1,12 @@
 body {
-    background-color: #166534;
-    font-family: 'Secular One', sans-serif;
+    background-color: #5cb9ef;
+    font-family: 'Poppins', sans-serif;
     text-align: center;
 }
 
 button {
     appearance: none;
-    background-color: #239042;
+    background-color: #a02bce;
     border: 1px solid rgba(27, 31, 35, .15);
     border-radius: 6px;
     box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
@@ -36,21 +36,21 @@ button {
   }
   
   button:hover {
-    background-color: #20833c;
+    background-color: #d249f4;
   }
   
   button:focus {
-    box-shadow: rgba(46, 164, 79, .4) 0 0 0 3px;
+    box-shadow: rgba(11, 169, 227, 0.4) 0 0 0 3px;
     outline: none;
   }
   
   button:active {
-    background-color: #1d7235;
+    background-color: #d249f4;
     box-shadow: rgba(20, 70, 32, .2) 0 1px 0 inset;
   }
 
   #main {
-    background-color: #16a34a;
+    background-color: #0092E6;
     position: absolute;
     left: 50%;
     top: 50%;
@@ -98,3 +98,7 @@ button {
     transform: translate(-50%, -50%);
     margin: 0 auto;
 }
+
+#main::-webkit-scrollbar {
+  width: 0 !important
+  }
