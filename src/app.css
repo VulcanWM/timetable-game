@@ -63,7 +63,8 @@ button {
     text-align: center;
     overflow-wrap: break-word;
     line-height: 1.8;
-    max-height: 90%;
+    max-height: 75%;
+    overflow: scroll;
   }
   
   @media only screen and (max-width: 600px) {

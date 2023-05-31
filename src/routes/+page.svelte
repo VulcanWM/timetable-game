@@ -149,7 +149,7 @@
 	{/if}
 	<button on:click={toggleStart}>{open ? 'End' : 'Start'} Game</button>
 	{#if open}
-		<br/><br/><span class="time">{seconds}</span>
+		<br/><span class="time">{seconds}</span>
 		<Timer callback={handleTick} />
 		<p class="question">What is {num1} x {num2}?</p>
 		<span class="correct">{correct}</span>
