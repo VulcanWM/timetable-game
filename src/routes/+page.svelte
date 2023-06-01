@@ -39,14 +39,16 @@
 	$: percentage = Math.floor((correct/(correct+incorrect))*100)
 	$: speed = Math.floor(60/correct*100)/100
 	function handleSubmit() {
-		if (parseInt(guess) == answer){
-			correct += 1
-		} else {
-			incorrect += 1
+		if (ended == false){
+			if (parseInt(guess) == answer){
+				correct += 1
+			} else {
+				incorrect += 1
+			}
+			guess = ""
+			num1 = timetables[Math.floor(Math.random() * timetables.length)];
+			num2 = Math.floor(Math.random() * 12) + 1;
 		}
-		guess = ""
-		num1 = timetables[Math.floor(Math.random() * timetables.length)];
-		num2 = Math.floor(Math.random() * 12) + 1;
 	}
 
 	/**
