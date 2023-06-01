@@ -1,103 +1,105 @@
 body {
-    background-color: #5cb9ef;
-    font-family: 'Poppins', sans-serif;
-    text-align: center;
+  background-color: #5cb9ef;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
 }
 
 button {
-    appearance: none;
-    background-color: #a02bce;
-    border: 1px solid rgba(27, 31, 35, .15);
-    border-radius: 6px;
-    box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
-    box-sizing: border-box;
-    color: #fff;
-    cursor: pointer;
-    display: inline-block;
-    font-family: -apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 20px;
-    padding: 6px 16px;
-    position: relative;
-    text-align: center;
-    text-decoration: none;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    vertical-align: middle;
-    margin-bottom: 5px;
-    overflow-wrap: break-word;
-  }
-  
-  button:focus:not(:focus-visible):not(.focus-visible) {
-    box-shadow: none;
-    outline: none;
-  }
-  
-  button:hover {
-    background-color: #d249f4;
-  }
-  
-  button:focus {
-    box-shadow: rgba(11, 169, 227, 0.4) 0 0 0 3px;
-    outline: none;
-  }
-  
-  button:active {
-    background-color: #d249f4;
-    box-shadow: rgba(20, 70, 32, .2) 0 1px 0 inset;
+  appearance: none;
+  background-color: #a02bce;
+  border: 1px solid rgba(27, 31, 35, .15);
+  border-radius: 6px;
+  box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  padding: 6px 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  margin-bottom: 5px;
+  overflow-wrap: break-word;
+}
+
+button:focus:not(:focus-visible):not(.focus-visible) {
+  box-shadow: none;
+  outline: none;
+}
+
+button:hover {
+  background-color: #d249f4;
+}
+
+button:focus {
+  box-shadow: rgba(11, 169, 227, 0.4) 0 0 0 3px;
+  outline: none;
+}
+
+button:active {
+  background-color: #d249f4;
+  box-shadow: rgba(20, 70, 32, .2) 0 1px 0 inset;
+}
+
+#main {
+  background-color: #0092E6;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  border: 2px solid black;
+  border-radius: 12px;
+  padding: 20px;
+  width: 50vw;
+  text-align: center;
+  overflow-wrap: break-word;
+  line-height: 1.8;
+  max-height: 75%;
+  overflow: scroll;
+}
+
+@media only screen and (max-width: 600px) {
+  #main {
+    width: 60vw;
   }
 
+  p {
+    font-size: 12px;
+  }
+
+  button {
+    font-size: 12px
+  }
+}
+
+@media only screen and (max-height: 400px) {
   #main {
-    background-color: #0092E6;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    border: 2px solid black;
-    border-radius: 12px;
-    padding: 20px;
-    width: 50vw;
-    text-align: center;
-    overflow-wrap: break-word;
-    line-height: 1.8;
-    max-height: 75%;
-    overflow: scroll;
+    width: 95%;
   }
-  
-  @media only screen and (max-width: 600px) {
-    #main {
-      width: 60vw;
-    }
-    p {
-      font-size: 12px;
-    }
-    button {
-      font-size: 12px
-    }
+}
+
+@media only screen and (max-width: 400px) {
+  #main {
+    width: 80vw;
   }
-  
-  @media only screen and (max-height: 400px) {
-    #main {
-      width: 95%;
-    }
-  }
-  
-  @media only screen and (max-width: 400px) {
-    #main {
-      width: 80vw;
-    }
-  }
+}
 
 #navbar {
-    position: fixed;
-    left: 50%;
-    bottom: 20px;
-    transform: translate(-50%, -50%);
-    margin: 0 auto;
-    width: 100%
+  position: fixed;
+  left: 50%;
+  bottom: 20px;
+  transform: translate(-50%, -50%);
+  margin: 0 auto;
+  width: 100%
 }
 
 a {
@@ -109,19 +111,19 @@ a {
 }
 
 a:hover {
-  text-decoration:underline;
+  text-decoration: underline;
 }
 
-#navbar > a {
+#navbar>a {
   text-decoration: none;
   color: #a02bce;
   background-color: #5cb9ef;
 }
 
-#navbar > a:hover {
-  text-decoration:underline;
+#navbar>a:hover {
+  text-decoration: underline;
 }
 
 #main::-webkit-scrollbar {
   display: none;
-  }
+}
