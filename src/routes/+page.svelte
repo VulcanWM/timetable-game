@@ -15,7 +15,6 @@
 	let timetables = [
 		1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
 	];
-	let data = [{ time: 0, value: 0 }];
 	function toggleStart() {
 		if (open == true) {
 			open = false;
@@ -26,11 +25,12 @@
 			incorrect = 0;
 			guess = "";
 			seconds = 60;
+			coords = ""
+			xValues = [0]
+			yValues = [0]
 		}
 	}
 	function handleTick() {
-		data.push({ time: 60 - seconds, value: correct });
-		data = data;
 		xValues.push(60 - seconds);
 		xValues = xValues;
 		yValues.push(correct);
@@ -69,6 +69,7 @@
 				(yValues[i] / (correct + incorrect)) * 100 +
 				" ";
 		}
+		return ""
 	}
 	$: console.log(coords);
 
@@ -98,6 +99,8 @@
 			timetables = timetables;
 		}
 	}
+
+	const returnNada = () => '';
 </script>
 
 <svelte:head>
@@ -113,8 +116,6 @@
 		</p>
 		<p>You got {percentage}% of questions correct!</p>
 		<p>Your speed was {speed} seconds per question.</p>
-		<p>{xValues}</p>
-		<p>{yValues}</p>
 
 		<svg
 			viewBox="0 0 100 100"
@@ -133,17 +134,18 @@
 			<line x1="0" x2="0" y1="0" y2="100" />
 			<g class="y" transform="translate(-10,0)">
 				<text y="100">0</text>
-				<text y="0">{correct + incorrect}</text>
+				<text y="0">{correct}</text>
 			</g>
 
 			<!-- data -->
 			<polyline
-				style="stroke: red; stroke-width: 2"
+				style="stroke: green; stroke-width: 2"
 				fill="none"
 				points={coords}
 				class="line"
 			/>
 		</svg>
+		<br/>
 	{/if}
 	<button on:click={toggleStart}>{open ? "End" : "Start"} Game</button>
 	{#if open}
@@ -265,7 +267,6 @@
 
 	.line {
 		transform-origin: 50% 50%;
-		/* center of rotation is set to the center of the element */
 		transform: scale(1, -1);
 	}
 </style>
