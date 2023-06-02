@@ -1,38 +1,27 @@
-# create-svelte
+# TimeTable Game
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+## What features does it have?
+This is a game where you have a minute to answer as many timetable questions as you can.
 
-## Creating a project
+You have an option to select which timetables you want to appear.
 
-If you're seeing this, you've probably already done this step. Congrats!
+At the end of the game, you can see how many questions you got right and wrong, and a graph which shows how many questions you have answered each second also appears.
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+## How was it made?
+This game is made using **Svelte** and **SvelteKit**, so it uses **HTML, CSS and JavaScript**.
 
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+It is hosted by **Netlify**.
 
-## Developing
+## How did you get the idea of making this?
+Since I first played TTRockstars, I've always wanted to make a game like this.
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+So when I started learning Svelte and needed a project idea, I decided to make this.
 
-```bash
-npm run dev
+## Where can I play it?
+You can play the game [here](https://timetable-game.netlify.app).
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+Or you can clone this repository, and run npm run dev to play it locally.
 
-## Building
+---
 
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+Thanks for checking out this repository!
