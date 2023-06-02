@@ -20,7 +20,7 @@ So when I started learning Svelte and needed a project idea, I decided to make t
 ## Where can I play it?
 You can play the game [here](https://timetable-game.netlify.app).
 
-Or you can clone this repository, and run npm run dev to play it locally.
+Or you can clone this repository, and run `npm run dev` to play it locally.
 
 ---
 
